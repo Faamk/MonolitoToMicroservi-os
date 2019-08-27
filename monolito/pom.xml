@@ -8,7 +8,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>monolio</name>
 	<description>AplicacaoMonolitica</description>
 
 	<parent>
@@ -60,6 +59,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>monolito</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
