@@ -19,9 +19,9 @@ function nameAndFortune() {
     })
 }
 
-function ip() {
-    get("/service/ip"+name, function (response) {
-        document.getElementById("ip").innerText = response;
+function header() {
+    get("/service/header"+name, function (response) {
+        document.getElementById("header").innerText = response;
     })
 }
 

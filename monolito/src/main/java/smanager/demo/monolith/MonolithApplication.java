@@ -24,9 +24,9 @@ public class MonolithApplication {
 	}
 
 
-	@RequestMapping("/service/ip")
+	@RequestMapping("/service/header")
 	public String hello(HttpServletRequest request) {
-		return "Seu IP é:  " + request.getRemoteAddr();
+		return "Seu Header é:  " + request.getHeader("User-Agent");
 	}
 
 	@RequestMapping("/service/hello")
