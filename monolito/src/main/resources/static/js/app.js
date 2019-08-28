@@ -19,6 +19,12 @@ function nameAndFortune() {
     })
 }
 
+function ip() {
+    get("/service/ip"+name, function (response) {
+        document.getElementById("ip").innerText = response;
+    })
+}
+
 function clearNameAndFortune() {
     document.getElementById("name").value = "";
     document.getElementById("hello").innerText = "";

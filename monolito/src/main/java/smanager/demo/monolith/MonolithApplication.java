@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 import java.util.Random;
 
 @RestController
@@ -19,6 +21,12 @@ public class MonolithApplication {
 		int idx = random.nextInt(FORTUNES.length);
 		String fortune = FORTUNES[idx];
 		return fortune;
+	}
+
+
+	@RequestMapping("/service/ip")
+	public String hello(HttpServletRequest request) {
+		return "Seu IP é:  " + request.getRemoteAddr();
 	}
 
 	@RequestMapping("/service/hello")
