@@ -5,7 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
+import java.util.Calendar;
 
+
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 @RestController
@@ -23,7 +27,19 @@ public class MonolithApplication {
 
     @RequestMapping("/service/hello")
     public String hello(@RequestParam String name) {
-        return "Olá " + name;
+        Date date = new Date();
+        Calendar calendar = GregorianCalendar.getInstance();
+        calendar.setTime(date);
+        int hora = calendar.get(Calendar.HOUR_OF_DAY);
+        if(hora < 12){
+            return "Bom Dia " + name;
+        }
+        if(hora < 19){
+            return "Boa Tarde " + name;
+        }
+            return "Boa Noite " + name;
+
+
     }
 
     private static final String[] FORTUNES = new String[] {
