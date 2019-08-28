@@ -19,12 +19,6 @@ function nameAndFortune() {
     })
 }
 
-function header() {
-    get("/service/header"+name, function (response) {
-        document.getElementById("header").innerText = response;
-    })
-}
-
 function clearNameAndFortune() {
     document.getElementById("name").value = "";
     document.getElementById("hello").innerText = "";
