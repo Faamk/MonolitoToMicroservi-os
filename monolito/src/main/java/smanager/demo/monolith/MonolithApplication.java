@@ -1,10 +1,12 @@
-package tech.gibb.monolith;
+package smanager.demo.monolith;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Calendar;
 
@@ -23,6 +25,12 @@ public class MonolithApplication {
         int idx = random.nextInt(FORTUNES.length);
         String fortune = FORTUNES[idx];
         return fortune;
+    }
+
+
+    @RequestMapping("/service/header")
+    public String hello(HttpServletRequest request) {
+        return "Seu Header é:  " + request.getHeader("User-Agent");
     }
 
     @RequestMapping("/service/hello")
