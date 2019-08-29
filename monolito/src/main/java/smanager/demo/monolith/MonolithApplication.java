@@ -27,12 +27,12 @@ public class MonolithApplication {
         return fortune;
     }
 
-/*
+
     @RequestMapping("/service/header")
     public String hello(HttpServletRequest request) {
         return "Seu Header é:  " + request.getHeader("User-Agent");
     }
-*/
+
 
     @RequestMapping("/service/hello")
     public String hello(@RequestParam String name) {
