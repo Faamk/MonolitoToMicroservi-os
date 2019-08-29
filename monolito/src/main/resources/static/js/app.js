@@ -9,11 +9,11 @@ function get(theUrl, callback)
     xmlHttp.send(null);
 }
 
-function header() {
+/*function header() {
     get("/service/header"+name, function (response) {
         document.getElementById("header").innerText = response;
     })
-}
+}*/
 
 function nameAndFortune() {
     var name = document.getElementById("name").value;
@@ -29,6 +29,6 @@ function clearNameAndFortune() {
     document.getElementById("name").value = "";
     document.getElementById("hello").innerText = "";
     document.getElementById("fortune").innerText = "";
-    document.getElementById("header").innerText = "";
+    //document.getElementById("header").innerText = "";
 
 }
